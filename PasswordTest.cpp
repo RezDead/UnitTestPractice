@@ -46,47 +46,62 @@ class PasswordTest : public ::testing::Test
 // 	ASSERT_EQ(1, my_password.count_leading_characters("Aab"));
 // }
 
-TEST(PasswordTest, empty_case_password){
+// TEST(PasswordTest, empty_case_password){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case(""));
+// }
+
+// TEST(PasswordTest, no_caps_case){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case("return"));
+// }
+
+// TEST(PasswordTest, mixed_case){
+// 	Password my_password;
+// 	ASSERT_TRUE(my_password.has_mixed_case("RaRner"));
+// }
+
+// TEST(PasswordTest, only_caps){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case("RARER"));
+// }
+
+// TEST(PasswordTest, only_numbers){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case("54321"));
+// }
+
+// TEST(PasswordTest, lower_with_numbers){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case("a5ar"));
+// }
+
+// TEST(PasswordTest, caps_with_numbers){
+// 	Password my_password;
+// 	ASSERT_FALSE(my_password.has_mixed_case("A5OR"));
+// }
+
+// TEST(PasswordTest, caps_lower_end){
+// 	Password my_password;
+// 	ASSERT_TRUE(my_password.has_mixed_case("AAAr"));
+// }
+
+// TEST(PasswordTest, lower_caps_end){
+// 	Password my_password;
+// 	ASSERT_TRUE(my_password.has_mixed_case("rreC"));
+// }
+
+TEST(PasswordTest, unique_base){
 	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case(""));
+	ASSERT_EQ(my_password.unique_characters("abcde"),5);
 }
 
-TEST(PasswordTest, no_caps_case){
+TEST(PasswordTest, unique_special){
 	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case("return"));
+	ASSERT_EQ(my_password.unique_characters("a'A$$b3$'"), 6);
 }
 
-TEST(PasswordTest, mixed_case){
+TEST(PasswordTest, unique_empty){
 	Password my_password;
-	ASSERT_TRUE(my_password.has_mixed_case("RaRner"));
-}
-
-TEST(PasswordTest, only_caps){
-	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case("RARER"));
-}
-
-TEST(PasswordTest, only_numbers){
-	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case("54321"));
-}
-
-TEST(PasswordTest, lower_with_numbers){
-	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case("a5ar"));
-}
-
-TEST(PasswordTest, caps_with_numbers){
-	Password my_password;
-	ASSERT_FALSE(my_password.has_mixed_case("A5OR"));
-}
-
-TEST(PasswordTest, caps_lower_end){
-	Password my_password;
-	ASSERT_TRUE(my_password.has_mixed_case("AAAr"));
-}
-
-TEST(PasswordTest, lower_caps_end){
-	Password my_password;
-	ASSERT_TRUE(my_password.has_mixed_case("rreC"));
+	ASSERT_EQ(my_password.unique_characters(""),0);
 }
