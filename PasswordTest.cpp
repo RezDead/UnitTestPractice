@@ -70,3 +70,23 @@ TEST(PasswordTest, only_numbers){
 	Password my_password;
 	ASSERT_FALSE(my_password.has_mixed_case("54321"));
 }
+
+TEST(PasswordTest, lower_with_numbers){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("a5ar"));
+}
+
+TEST(PasswordTest, caps_with_numbers){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("A5OR"));
+}
+
+TEST(PasswordTest, caps_lower_end){
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("AAAr"));
+}
+
+TEST(PasswordTest, lower_caps_end){
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("rreC"));
+}
