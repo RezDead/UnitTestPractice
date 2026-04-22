@@ -14,82 +14,82 @@ class PasswordTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
-// TEST(PasswordTest, single_letter_password)
-// {
-// 	Password my_password;
-// 	int actual = my_password.count_leading_characters("Z");
-// 	ASSERT_EQ(1, actual);
-// }
+TEST(PasswordTest, single_letter_password)
+{
+	Password my_password;
+	int actual = my_password.count_leading_characters("Z");
+	ASSERT_EQ(1, actual);
+}
 
-// TEST(PasswordTest, double_same_password){
-// 	Password my_password;
-// 	ASSERT_EQ(2, my_password.count_leading_characters("aa"));
-// }
+TEST(PasswordTest, double_same_password){
+	Password my_password;
+	ASSERT_EQ(2, my_password.count_leading_characters("aa"));
+}
 
-// TEST(PasswordTest, empty_password){
-// 	Password my_password;
-// 	ASSERT_EQ(0, my_password.count_leading_characters(""));
-// }
+TEST(PasswordTest, empty_password){
+	Password my_password;
+	ASSERT_EQ(0, my_password.count_leading_characters(""));
+}
 
-// TEST(PasswordTest, double_end_password){
-// 	Password my_password;
-// 	ASSERT_EQ(2, my_password.count_leading_characters("aab"));
-// }
+TEST(PasswordTest, double_end_password){
+	Password my_password;
+	ASSERT_EQ(2, my_password.count_leading_characters("aab"));
+}
 
-// TEST(PasswordTest, mixed_case_password){
-// 	Password my_password;
-// 	ASSERT_EQ(1, my_password.count_leading_characters("aba"));
-// }
+TEST(PasswordTest, mixed_case_password){
+	Password my_password;
+	ASSERT_EQ(1, my_password.count_leading_characters("aba"));
+}
 
-// TEST(PasswordTest, capital_case_password){
-// 	Password my_password;
-// 	ASSERT_EQ(1, my_password.count_leading_characters("Aab"));
-// }
+TEST(PasswordTest, capital_case_password){
+	Password my_password;
+	ASSERT_EQ(1, my_password.count_leading_characters("Aab"));
+}
 
-// TEST(PasswordTest, empty_case_password){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case(""));
-// }
+TEST(PasswordTest, empty_case_password){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case(""));
+}
 
-// TEST(PasswordTest, no_caps_case){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case("return"));
-// }
+TEST(PasswordTest, no_caps_case){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("return"));
+}
 
-// TEST(PasswordTest, mixed_case){
-// 	Password my_password;
-// 	ASSERT_TRUE(my_password.has_mixed_case("RaRner"));
-// }
+TEST(PasswordTest, mixed_case){
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("RaRner"));
+}
 
-// TEST(PasswordTest, only_caps){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case("RARER"));
-// }
+TEST(PasswordTest, only_caps){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("RARER"));
+}
 
-// TEST(PasswordTest, only_numbers){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case("54321"));
-// }
+TEST(PasswordTest, only_numbers){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("54321"));
+}
 
-// TEST(PasswordTest, lower_with_numbers){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case("a5ar"));
-// }
+TEST(PasswordTest, lower_with_numbers){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("a5ar"));
+}
 
-// TEST(PasswordTest, caps_with_numbers){
-// 	Password my_password;
-// 	ASSERT_FALSE(my_password.has_mixed_case("A5OR"));
-// }
+TEST(PasswordTest, caps_with_numbers){
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("A5OR"));
+}
 
-// TEST(PasswordTest, caps_lower_end){
-// 	Password my_password;
-// 	ASSERT_TRUE(my_password.has_mixed_case("AAAr"));
-// }
+TEST(PasswordTest, caps_lower_end){
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("AAAr"));
+}
 
-// TEST(PasswordTest, lower_caps_end){
-// 	Password my_password;
-// 	ASSERT_TRUE(my_password.has_mixed_case("rreC"));
-// }
+TEST(PasswordTest, lower_caps_end){
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("rreC"));
+}
 
 TEST(PasswordTest, unique_base){
 	Password my_password;
